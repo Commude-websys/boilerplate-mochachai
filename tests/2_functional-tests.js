@@ -39,9 +39,11 @@ suite('Functional Tests', function () {
         .request(server)
         .keepOpen()
         .put('/travellers')
+        .surname
 
         .end(function (err, res) {
-          assert.fail();
+          assert.equal(res.status, 200, "Response status should be 200");
+          // assert.equal(res.)
 
           done();
         });
